@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+body {
+	margin: 0;
+	background-color: #a2bac4;
+	font-family: "Staatliches", cursive, -apple-system, BlinkMacSystemFont,
+		"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+body,
+#container {
+	background: #222;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.inner {
+	background: #444;
+	padding-left: 20px;
+	padding-right: 20px;
+	min-width: 740px;
+	max-width: 900px;
+	margin: 0 auto;
+}

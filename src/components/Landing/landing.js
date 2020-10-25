@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../common/Navbar/navbar";
+import Navbar from "../common/NavBar/navbar";
 
 const Landing = (props) => {
 	return (

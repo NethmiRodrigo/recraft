@@ -1,17 +1,23 @@
-const { default: Login } = require("../components/Login/login");
-const { default: Register } = require("../components/Register/register");
+import Landing from "../components/Landing/landing";
+import Login from "../components/Login/login";
+import Register from "../components/Register/register";
 
 const routes = {
 	data: [
 		{
-			name: "Landing",
-			path: "/",
+			name: "Login",
+			path: "/login",
 			component: Login,
 		},
 		{
 			name: "Register",
 			path: "/register",
 			component: Register,
+		},
+		{
+			name: "Home",
+			path: "/",
+			component: Landing,
 		},
 	],
 };

@@ -7,6 +7,7 @@ import routes from "./constants/routes";
 
 //Styles
 import "./assets/css/rpgui/rpgui.css";
+import "./assets/css/tailwind.css";
 
 function App() {
 	return (
@@ -20,23 +21,22 @@ function App() {
 								exact
 								path={entry.path}
 								render={() =>
-									entry.name === "Landing" || entry.name === "Register" ? (
-										<div className="rpgui-content mx-auto justify-center flex w-full">
+									entry.name === "Login" || entry.name === "Register" ? (
+										<div className="container mt-10 mb-10 mx-auto rpgui-content">
 											<div
 												id="containers"
-												className="rpgui-container framed-grey"
+												className="rpgui-container framed-grey container justify-between mx-auto"
 											>
-												<h1> RECRAFT </h1>
+												<h1>RECRAFT</h1>
 												<p className="text-center">
-													A recycling platform for those who care about the
-													environment
+													Help us make the environment great again!
 												</p>
 												<hr />
 												<div className="grid grid-flow-col auto-cols-max justify-center my-8">
 													<div className="rpgui-container framed-golden relative max-w-sm h-full">
 														<img
 															className="h-auto w-full"
-															src={require("./assets/images/card-top.jpg")}
+															src={require("./assets/images/background.png")}
 															alt="Sunset"
 														/>
 														<div class="px-6 py-4">
@@ -52,11 +52,13 @@ function App() {
 														<entry.component />
 													</div>
 												</div>
-												<hr />
+												<hr className="m-10" />
 											</div>
 										</div>
 									) : (
-										<entry.component />
+										<div className="rpgui-content">
+											<entry.component />
+										</div>
 									)
 								}
 							/>

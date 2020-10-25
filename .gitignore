@@ -26,3 +26,5 @@ yarn-debug.log*
 yarn-error.log*
 debug.log
 backend/util/serviceAccount.json
+backend/config/config.js
+backend/node_modules

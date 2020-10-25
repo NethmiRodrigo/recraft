@@ -3,7 +3,7 @@ const {db} = require('../util/admin')
 exports.createSellerAdd = (req,res)=>{
     
     const newSellerAdd = {
-            addId: req.body.reqId,
+            addId: req.body.addId,
             userId: req.body.userId,
             typeId: req.body.typeId,
             categoryId: req.body.categoryId,
@@ -13,15 +13,15 @@ exports.createSellerAdd = (req,res)=>{
     }
 
     db.collection('sellerAdd')
-        .add(newSellerAdd)
-        .then(()=>{
-            res.json(newSellerAdd);
-        })
+    .add(newSellerAdd)
+    .then(()=>{
+        res.json(newSellerAdd);
+    })
 }
 
 exports.getSellerAdd = (req,res)=>{
         let sellerAdd = {}
-        db.doc(`/selleradd/${req.params.addId}`)
+        db.doc(`/sellerAdd/${req.params.addId}`)
             .get()
             .then((doc)=>{
                 if(!doc.exists)
@@ -37,12 +37,15 @@ exports.updateSellerAdd = (req,res)=>{
 
 }
 
+
 exports.deleteSellerAdd = (req,res)=>{
-    db.doc(`/selleradd/${req.params.addId}`)
+    const document =   db.doc(`/sellerAdd/${req.params.addId}`);
+        document
         .get()
         .then((doc)=>{
             if(!doc.exists)
                 return res.status(404).json({error:"Seller not found"})
-           
+           document.delete();
+            return res.status(200).send(doc.data())
         })
 }

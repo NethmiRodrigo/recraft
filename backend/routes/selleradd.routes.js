@@ -1,6 +1,6 @@
 module.exports = (app) => {
 
-    const selleradd = require('../controllers/sellerAdd.controller.js');
+    const selleradd = require('../controllers/sellerAdd.controller');
 
     app.post('/selleradd',selleradd.createSellerAdd);
 

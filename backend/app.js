@@ -11,6 +11,22 @@ app.use(express.urlencoded())
 app.use(express.json())
 
 
+// users
+
+var userfn = require('./routes/user.routes');
+userfn(app);
+
+// seller add
+
+var selleraddfn = require('./routes/selleradd.routes');
+selleraddfn(app);
+
+
+//buyer add
+
+var buyeraddfn = require('./routes/buyeradd.routes')
+buyeraddfn(app);
+
 //Sign up user
 
 app.post('/register', (req,res)=> {

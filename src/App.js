@@ -33,7 +33,7 @@ function App() {
 												</p>
 												<hr />
 												<div className="grid grid-flow-col auto-cols-max justify-center my-8">
-													<div className="rpgui-container framed-golden relative max-w-sm h-full">
+													<div className="rpgui-container framed-golden relative max-w-sm h-full mr-3">
 														<img
 															className="h-auto w-full"
 															src={require("./assets/images/background.png")}

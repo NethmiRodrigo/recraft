@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../common/navbar";
+import Navbar from "../common/Navbar/navbar";
 
 const Landing = (props) => {
 	return (
@@ -7,7 +7,7 @@ const Landing = (props) => {
 			<Navbar />
 			<div className="container flex mx-auto mt-10 justify-between">
 				<div className="container mx-auto bg-gray-900 rounded p-2 border-2 border-white w-max m-3 h-full mr-10">
-					<div className="container mb-10 mt-10 items-center">
+					<div className="container mb-10 items-center">
 						<h3>Recyclable Products</h3>
 						<div className="max-w-xs rounded overflow-hidden shadow-lg bg-white mx-auto">
 							<img
@@ -34,9 +34,9 @@ const Landing = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="container mx-auto bg-gray-900 rounded p-2 border-2 border-white w-max m-3 h-full mr-10">
+				<div className="container mx-auto bg-gray-900 rounded pr-10 pl-10 border-2 border-white w-max m-3 h-full mr-10">
 					<h3>Events</h3>
-					<div className="container mx-auto mb-10 mt-10 justify-center items-center">
+					<div className="container mx-auto mb-10 justify-center items-center">
 						<button className="max-w-sm rounded overflow-hidden shadow-lg bg-white mx-auto">
 							<img
 								className="w-full"
@@ -89,20 +89,21 @@ const Landing = (props) => {
 				</div>
 				<div className="container mx-auto justify-center bg-gray-900 rounded p-2 border-2 border-white w-max m-3 h-full">
 					<h3>Your Ads</h3>
-					<div className="container mb-10 mt-10">
-						<div className="max-w-xs rounded overflow-hidden shadow-lg items-center bg-white mx-auto">
+					<div className="container mb-10">
+						<div className="max-w-xs rounded overflow-hidden shadow-lg items-center bg-gray-600 mx-auto">
 							<img
 								className="w-full"
 								src={require("../../assets/images/card-top.jpg")}
 								alt="Sunset in the mountains"
 							></img>
-							<div className="font-bold mb-2 text-center text-white m-2">
+							<div className="font-bold text-center text-black mt-2">
 								Reusable
+								<p className="text-center m-5 ">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do
+								</p>
 							</div>
-							<p className="text-center m-5">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							</p>
-							<button className="bg-gray-600 hover:bg-gray-400 w-full h-full p-2">
+							<button className="bg-red-600 hover:bg-red-300 w-full h-full p-2">
 								Delete Ad
 							</button>
 						</div>

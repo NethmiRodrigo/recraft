@@ -33,14 +33,14 @@ function App() {
 												</p>
 												<hr />
 												<div className="grid grid-flow-col auto-cols-max justify-center my-8">
-													<div className="rpgui-container framed-golden relative max-w-sm h-full">
+													<div className="rpgui-container framed-golden relative max-w-sm h-full mr-3">
 														<img
 															className="h-auto w-full"
 															src={require("./assets/images/background.png")}
 															alt="Sunset"
 														/>
-														<div class="px-6 py-4">
-															<p class="text-gray-700 text-base">
+														<div className="px-6 py-4">
+															<p className="text-gray-700 text-base">
 																Lorem ipsum dolor sit amet, consectetur
 																adipisicing elit. Voluptatibus quia, nulla!
 																Maiores et perferendis eaque, exercitationem

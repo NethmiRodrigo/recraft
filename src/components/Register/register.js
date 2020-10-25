@@ -54,7 +54,7 @@ const Register = (props) => {
 							required
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
-							placeholder="Email"
+							placeholder="example@example.com"
 						/>
 					</div>
 					<div className="mb-4">
@@ -69,7 +69,7 @@ const Register = (props) => {
 							id="mobile"
 							type="text"
 							required
-							placeholder="0778956234"
+							placeholder="0771234567"
 						/>
 					</div>
 					<div className="mb-4">
@@ -112,7 +112,7 @@ const Register = (props) => {
 							Sign Up
 						</button>
 						<a
-							className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+							className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 ml-6"
 							href="/login"
 						>
 							Already have an account?

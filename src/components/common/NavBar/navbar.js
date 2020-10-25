@@ -22,21 +22,6 @@ const Navbar = (props) => {
 					</a>
 					<div>
 						<ul className="flex items-center">
-							<li className="p-2 mx-4">
-								<div className="flex items-center border-b border-gray-500 py-2">
-									<input
-										className="appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none"
-										type="text"
-										placeholder="Search.."
-									/>
-									<button
-										className="flex-shrink-0 bg-green-800 hover:bg-green-500 border-4 border-green-800 hover:border-green-500 text-white py-1 px-2 text-xs"
-										type="button"
-									>
-										Search
-									</button>
-								</div>
-							</li>
 							<li className="mx-3">
 								<a href="/">Home</a>
 							</li>

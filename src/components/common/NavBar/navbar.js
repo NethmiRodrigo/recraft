@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "./modal/modal";
+import Modal from "../MakeAdModal/modal";
 
 const Navbar = (props) => {
 	const [dialog, setDialog] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = (props) => {
 					>
 						<span className="flex items-center justify-between">
 							<img
-								src={require("../../assets/images/logo.png")}
+								src={require("../../../assets/images/logo.png")}
 								className="h-20 w-20"
 							/>
 							<p>RECRAFT</p>
@@ -37,20 +37,20 @@ const Navbar = (props) => {
 									</button>
 								</div>
 							</li>
-							<li className="p-2 mx-4">
+							<li className="mx-3">
 								<a href="/">Home</a>
 							</li>
-							<li className="p-2 mx-4">
-								<a href="#">View ads</a>
+							<li className="mx-3">
+								<a href="#">Post event</a>
 							</li>
-							<li className="p-2 mx-4">
+							<li className="mx-3">
 								<a
 									href="#"
 									onClick={() => {
 										setDialog(true);
 									}}
 								>
-									Make an ad
+									Post ad
 								</a>
 							</li>
 							<Link to="/login">

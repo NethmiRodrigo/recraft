@@ -21,6 +21,12 @@ userfn(app);
 var selleraddfn = require('./routes/selleradd.routes');
 selleraddfn(app);
 
+
+//buyer add
+
+var buyeraddfn = require('./routes/buyeradd.routes')
+buyeraddfn(app);
+
 //Sign up user
 
 app.post('/register', (req,res)=> {

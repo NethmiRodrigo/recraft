@@ -12,7 +12,7 @@
 | Member 1    | Nethmi Rodrigo               | 19001462          | @nethmirodrigo|
 | Member 2    | Nisan Abeywickrama           | 19000032          | @lordreigns   |
 | Member 3    | Isuru harischandra           | 19020333          | @isuruvihan   |
-| Member 4    | Akila Maithripala            | 19020333          | @akilamaithri |     
+| Member 4    | Akila Maithripala            | 19020432          | @akilamaithri |     
 
 ## What we are building
  

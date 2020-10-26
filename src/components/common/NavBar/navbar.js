@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../MakeAdModal/modal";
+import ModalEvent from "../MakeEventModal/modal"
 
 const Navbar = (props) => {
 	const [dialog, setDialog] = useState(false);
+	const [eventdialog, seteventDialog] = useState(false);
 	return (
 		<header>
 			<div className="bg-green-900 py-4">
@@ -26,7 +28,15 @@ const Navbar = (props) => {
 								<button className="rpgui-button">Home</button>
 							</li>
 							<li className="mx-3">
-								<button className="rpgui-button">Post event</button>
+								<button 
+								className="rpgui-button"
+								onClick= { ()=> {
+									seteventDialog(true)
+								
+								}
+
+								}
+								>Post event</button>
 							</li>
 							<li className="mx-3">
 								<button
@@ -46,7 +56,8 @@ const Navbar = (props) => {
 						</ul>
 					</div>
 				</div>
-				{dialog ? <Modal deactivate={setDialog} /> : <></>}
+				{dialog ? <Modal deactivate={setDialog}/>  : <></>}
+				{eventdialog ? <ModalEvent deactivate={seteventDialog}/> : <></>}
 			</div>
 		</header>
 	);

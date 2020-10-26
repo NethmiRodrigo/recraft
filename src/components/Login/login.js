@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import { login } from "../../controllers/userController";
 
 const Login = (props) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [success, setSuccess] = useState(false);
 
 	const submit = (event) => {
 		event.preventDefault();
 		login({ email: username, password })
 			.then((response) => {
+				setSuccess(true);
 				console.log(response);
 			})
 			.catch((err) => {
@@ -18,6 +21,7 @@ const Login = (props) => {
 
 	return (
 		<div>
+			{success ? <Redirect to="?" /> : <> </>}
 			<div className="font-bold text-xl mb-2 text-center text-white">Login</div>
 			<div className="w-full ">
 				<form className="rounded px-8 pt-6 pb-8 mb-4" onSubmit={submit}>

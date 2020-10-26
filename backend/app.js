@@ -65,7 +65,7 @@ app.post("/", (req, res) => {
 		.auth()
 		.signInWithEmailAndPassword(user.email, user.password)
 		.then((data) => {
-			return data.user.getIdToken();
+			return data.user.uid;
 		})
 		.then((token) => {
 			return res.status(201).json({ token });

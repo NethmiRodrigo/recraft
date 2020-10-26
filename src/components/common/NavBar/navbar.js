@@ -23,24 +23,26 @@ const Navbar = (props) => {
 					<div>
 						<ul className="flex items-center">
 							<li className="mx-3">
-								<a href="/">Home</a>
+								<button className="rpgui-button">Home</button>
 							</li>
 							<li className="mx-3">
-								<a href="#">Post event</a>
+								<button className="rpgui-button">Post event</button>
 							</li>
 							<li className="mx-3">
-								<a
-									href="#"
+								<button
+									className="rpgui-button"
 									onClick={() => {
 										setDialog(true);
 									}}
 								>
 									Post ad
-								</a>
+								</button>
 							</li>
-							<Link to="/login">
-								<button className="rpgui-button">Logout</button>
-							</Link>
+							<li>
+								<Link to="/login">
+									<button className="rpgui-button">Logout</button>
+								</Link>
+							</li>
 						</ul>
 					</div>
 				</div>

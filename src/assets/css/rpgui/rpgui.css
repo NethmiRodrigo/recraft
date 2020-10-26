@@ -9,6 +9,7 @@ inside your html file.
 * Customized scrollbars
 */
 /* to get pixelated images (nearest-neighbor filter) on all  browsers */
+
 .rpgui-pixelated {
 	-ms-interpolation-mode: nearest-neighbor;
 	image-rendering: -webkit-optimize-contrast;
@@ -320,7 +321,8 @@ inside your html file.
 	border-image-repeat: repeat;
 	border-image-slice: 8 8 8 8;
 	border-image-width: 18px;
-	border-width: 15px;
+	border-width: 15
+	px;
 	padding: 12px;
 	/* internal border */
 	box-sizing: border-box;

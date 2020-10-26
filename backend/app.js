@@ -1,16 +1,18 @@
 const express = require("express");
 const firebase = require("firebase");
 const config = require("./config/config");
+const bodyParser= require('body-parser')
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
-
+app.use(bodyParser.urlencoded({extended: true}))
 firebase.initializeApp(config);
 
 //middleware
 app.use(express.urlencoded());
 app.use(express.json());
+
 
 // users
 

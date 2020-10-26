@@ -5,7 +5,7 @@ const serviceAccount = require("./serviceAccount.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://thumbsup-dd6b9.firebaseio.com",
+    databaseURL: "https://recraft-dd2c9.firebaseio.com",
 });
 
 

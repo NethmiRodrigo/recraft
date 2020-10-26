@@ -7,7 +7,8 @@ exports.createUser = (req,res)=>{
         userId: req.body.userId,
         Name: req.body.name,
         Address: req.body.address,
-        districtId: req.body.districtId,
+        cityName: req.body.cityName,
+        districtName: req.body.districtName,
         phone: req.body.phone,
         isActive: req.body.isActive,
     

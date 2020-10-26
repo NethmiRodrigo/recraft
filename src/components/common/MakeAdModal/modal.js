@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Modal = (props) => {
+	const useInput = ({ type }) => {
+		const [value, setValue] = useState("");
+		const input = (
+			<div className="md:w-2/3">
+				<input
+					value={value}
+					onChange={(e) => setValue(e.target.value)}
+					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
+					type={type}
+				/>
+			</div>
+		);
+		return [value, input];
+	};
+	const [category, setCategory] = useState("recycle");
+	const [type, setType] = useState("");
+	const [product, productInput] = useInput({ type: "text" });
+	const [price, priceInput] = useInput({ type: "number" });
+	const [mobile, mobileInput] = useInput({ type: "text" });
+	const [location, locationInput] = useInput({ type: "text" });
+	const [image, setImage] = useState("");
 	return (
 		<div>
 			<div className="fixed z-10 inset-0 overflow-y-auto">
@@ -18,33 +39,21 @@ const Modal = (props) => {
 					>
 						<div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 items-center text-center justify-center mx-auto">
 							<div className="text-white text-lg border-b border-white">
-								Make an ad
+								Post an advertisement for a product
 							</div>
 							<div className="mt-5">
 								<form className="w-full justify-center">
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 font-bold text-xs md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-full-name"
-											>
+											<label className="block text-gray-500 font-bold text-xs md:text-right mb-1 md:mb-0 pr-4">
 												Product Name
 											</label>
 										</div>
-										<div className="md:w-2/3">
-											<input
-												className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
-												id="inline-full-name"
-												type="text"
-											/>
-										</div>
+										{productInput}
 									</div>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 text-xs font-bold md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-full-name"
-											>
+											<label className="block text-gray-500 text-xs font-bold md:text-right mb-1 md:mb-0 pr-4">
 												Description
 											</label>
 										</div>
@@ -59,87 +68,93 @@ const Modal = (props) => {
 									</div>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-password"
-											>
+											<label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
 												Category
 											</label>
 										</div>
 										<div className="md:w-2/3">
-											<select className="block appearance-none w-full bg-gray-200 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-												<option>Recyclable</option>
-												<option>Reusable</option>
+											<select
+												className="block appearance-none w-full bg-gray-200 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+												value={category}
+												onChange={(e) => setCategory(e.target.value)}
+											>
+												<option value="recycle">Recyclable</option>
+												<option value="reuse">Reusable</option>
 											</select>
 										</div>
 									</div>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-password"
-											>
+											<label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
 												Type
 											</label>
 										</div>
 										<div className="md:w-2/3">
-											<select className="block appearance-none w-full bg-gray-200 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-												<option>Plastic</option>
-												<option>Glass</option>
+											<select
+												className="block appearance-none w-full bg-gray-200 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+												value={type}
+												onChange={(e) => setType(e.target.value)}
+											>
+												{category === "recycle" ? (
+													<>
+														<option value="plastic">Plastic</option>
+														<option value="glass">Glass</option>
+														<option value="metal">Metals</option>
+														<option value="organic">Organic</option>
+														<option value="textile">Textiles</option>
+													</>
+												) : category === "reuse" ? (
+													<>
+														<option value="needs repair">Needs Repair</option>
+														<option value="needs no repair">
+															Needs no repair
+														</option>
+													</>
+												) : (
+													<> </>
+												)}
 											</select>
 										</div>
 									</div>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-full-name"
-											>
-												Price
+											<label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+												Price (Rs.)
+											</label>
+										</div>
+										{priceInput}
+									</div>
+									<div className="md:flex md:items-center mb-6">
+										<div className="md:w-1/3">
+											<label className="block text-gray-500 font-bold text-xs md:text-right mb-1 md:mb-0 pr-4">
+												Upload a picture of the product
 											</label>
 										</div>
 										<div className="md:w-2/3">
 											<input
-												className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
+												className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight overflow-hidden"
 												id="inline-full-name"
-												type="text"
-												placeholder="Rs. xxxxx"
+												type="file"
+												accept="image/png, image/jpeg"
+												onChange={(e) => setImage(e.target.files[0])}
 											/>
 										</div>
 									</div>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-full-name"
-											>
+											<label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
 												Phone Number
 											</label>
 										</div>
-										<div className="md:w-2/3">
-											<input
-												className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
-												id="inline-full-name"
-												type="text"
-											/>
-										</div>
+										{mobileInput}
 									</div>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
-											<label
-												className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-												for="inline-full-name"
-											>
+											<label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
 												Location
 											</label>
 										</div>
-										<div className="md:w-2/3">
-											<input
-												className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
-												id="inline-full-name"
-												type="text"
-											/>
-										</div>
+										{locationInput}
 									</div>
 									<div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
 										<span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">

@@ -6,7 +6,7 @@ module.exports = (app) => {
 
     app.get('/users/:userId',users.getUser);
 
-    app.put('/users/:userId',users.updateUser);
+    app.update('/users/:userId',users.updateUser);
 
     app.delete('/users/:userId', users.deleteUser)  ;
 

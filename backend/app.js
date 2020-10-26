@@ -43,7 +43,7 @@ app.post("/register", (req, res) => {
 		.auth()
 		.createUserWithEmailAndPassword(newUser.email, newUser.password)
 		.then((data) => {
-			return res.status(201).json({ message: `Succesfull` });
+			return res.status(201).json(newUser);
 		})
 		.catch((err) => {
 			console.log(err);
@@ -65,13 +65,14 @@ app.post("/", (req, res) => {
 		.auth()
 		.signInWithEmailAndPassword(user.email, user.password)
 		.then((data) => {
-			return res.status(201).json({ message: `Succesfull` });
+			return res.status(201).json(user);
 		})
 		.catch((err) => {
 			console.log(err);
 
 			return res.status(500).json({ error: err.code });
 		});
+	
 });
 
 app.listen(3060, () => console.log("Running App"));

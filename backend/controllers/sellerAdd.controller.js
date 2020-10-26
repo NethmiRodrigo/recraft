@@ -51,6 +51,8 @@ exports.createSellerAdd = (req,res)=>{
             categoryName: req.body.categoryName,
             conditionDetails: req.body.conditionDetails,
             imageUrl:imageUrl,
+            location:req.body.location,
+            time:req.body.time,
             postDate: new Date().toISOString(),
             isActive: req.body.isActive
     }

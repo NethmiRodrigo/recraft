@@ -8,7 +8,7 @@ module.exports = (app) => {
 
     app.get('/selleradd/:addId',selleradd.getSellerAdd);
 
-    app.put('/selleradd/:addId',selleradd.updateSellerAdd);
+    app.update('/selleradd/:addId',selleradd.updateSellerAdd);
 
     app.delete('/selleradd/:addId', selleradd.deleteSellerAdd)  ;
 

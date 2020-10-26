@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
 const Modal = (props) => {
+	const onSubmit = () =>{
+			console.log("submitted")
+	}
 	const useInput = ({ type }) => {
 		const [value, setValue] = useState("");
 		const input = (
@@ -42,7 +45,7 @@ const Modal = (props) => {
 								Post an advertisement for a product
 							</div>
 							<div className="mt-5">
-								<form className="w-full justify-center">
+								<form className="w-full justify-center" onSubmit={onSubmit()}>
 									<div className="md:flex md:items-center mb-6">
 										<div className="md:w-1/3">
 											<label className="block text-gray-500 font-bold text-xs md:text-right mb-1 md:mb-0 pr-4">

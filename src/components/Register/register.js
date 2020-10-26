@@ -4,12 +4,14 @@ import { register } from "../../controllers/userController";
 const Register = (props) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [city, setCity] = useState("")
+	const [phone, setPhone] = useState("")
 	const [email, setEmail] = useState("");
 
 	const submit = (event) => {
 		console.log("submitted");
 		event.preventDefault();
-		register({ email: email, password })
+		register({ email: email, password }, {name:username, cityName:city, phone:phone}, )
 			.then((response) => {
 				console.log(response);
 			})
@@ -69,6 +71,8 @@ const Register = (props) => {
 							id="city"
 							type="text"
 							required
+							value={city}
+							onChange = {(e) => setCity(e.target.value)}
 							placeholder="Your city"
 						/>
 					</div>
@@ -84,6 +88,8 @@ const Register = (props) => {
 							id="mobile"
 							type="text"
 							required
+							value={phone}
+							onChange={(e) => setPhone(e.target.value)}
 							placeholder="0771234567"
 						/>
 					</div>
@@ -116,6 +122,7 @@ const Register = (props) => {
 							id="password"
 							type="password"
 							required
+					
 							placeholder="******************"
 						/>
 					</div>

@@ -13,9 +13,11 @@ const Login = (props) => {
 			.then((response) => {
 				setSuccess(true);
 				console.log(response);
+				return <Redirect to="/" />;
 			})
 			.catch((err) => {
 				console.log(err);
+				return <Redirect to="/" />;
 			});
 	};
 

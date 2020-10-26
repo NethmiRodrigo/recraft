@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Redirect} from 'react-router-dom'
 import { login } from "../../controllers/userController";
 
 const Login = (props) => {
@@ -10,9 +11,11 @@ const Login = (props) => {
 		login({ email: username, password })
 			.then((response) => {
 				console.log(response);
+				return <Redirect to='/' />
 			})
 			.catch((err) => {
 				console.log(err);
+				return <Redirect to='/' />
 			});
 	};
 

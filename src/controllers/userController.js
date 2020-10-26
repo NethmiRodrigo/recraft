@@ -13,7 +13,7 @@ export function login(user) {
 		});
 }
 
-export function register(user) {
+export function register(user,userDetails) {
 	return axios
 		.post(`${url}register`, user)
 		.then((response) => {

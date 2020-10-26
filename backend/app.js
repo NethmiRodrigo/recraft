@@ -1,18 +1,17 @@
 const express = require("express");
 const firebase = require("firebase");
 const config = require("./config/config");
-const bodyParser= require('body-parser')
+const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }));
 firebase.initializeApp(config);
 
 //middleware
 app.use(express.urlencoded());
 app.use(express.json());
-
 
 // users
 
@@ -43,7 +42,8 @@ app.post("/register", (req, res) => {
 		.auth()
 		.createUserWithEmailAndPassword(newUser.email, newUser.password)
 		.then((data) => {
-			return res.status(201).json(newUser);
+			userId = data.user.uid;
+			return data.user.getIdToken();
 		})
 		.catch((err) => {
 			console.log(err);
@@ -65,14 +65,16 @@ app.post("/", (req, res) => {
 		.auth()
 		.signInWithEmailAndPassword(user.email, user.password)
 		.then((data) => {
-			return res.status(201).json(user);
+			return data.user.getIdToken();
+		})
+		.then((token) => {
+			return res.status(201).json({ token });
 		})
 		.catch((err) => {
 			console.log(err);
 
 			return res.status(500).json({ error: err.code });
 		});
-	
 });
 
 app.listen(3060, () => console.log("Running App"));

@@ -29,6 +29,28 @@ After getting some inspiration from (rare to find) retro themes, we finished the
 **[Update 3 - 24th of October]**
 Desgined the landing page UI components such as the navigation menu, footer, posts for latest post updates. As we agreed before, partitioned the landing page into three sections. Center section serves as a news feed, showing the advertisments posted by users about the reusable and recycable items in their households, and advertisments posted by recylcing agents about collecting dates and times of goods.
 
+## Features to come
+1. Responsiveness
+2. View all ads
+3. Search functionality
+4. Add event to calendar
+5. Get notifications based on area
+
+## Known issues
+1. Successful ad post does not display message
+2. Landing page does not show user ads
+3. Error on login and register api call not displayed
+
+## How to setup
+1. Git clone the repo
+2. Run npm install
+3. CD to backend
+4. Run npm install and then run node app.js
+5. CD back to root directory
+6. Run npm start
+
+## Live Demo
+https://re-craft.herokuapp.com/
 
 ## Link to Code
 <u>Github</u> 

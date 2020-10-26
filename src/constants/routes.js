@@ -1,6 +1,7 @@
 import Landing from "../components/Landing/landing";
 import Login from "../components/Login/login";
 import Register from "../components/Register/register";
+import ViewAllAds from "../components/ViewAllAdds/viewAllAds";
 
 const routes = {
 	data: [
@@ -18,6 +19,11 @@ const routes = {
 			name: "Home",
 			path: "/",
 			component: Landing,
+		},
+		{
+			name: "ViewAllAds",
+			path: "/ads",
+			component: ViewAllAds,
 		},
 	],
 };

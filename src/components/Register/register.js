@@ -60,6 +60,21 @@ const Register = (props) => {
 					<div className="mb-4">
 						<label
 							className="block text-gray-700 text-sm font-bold mb-2"
+							htmlFor="city"
+						>
+							City
+						</label>
+						<input
+							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-white"
+							id="city"
+							type="text"
+							required
+							placeholder="Your city"
+						/>
+					</div>
+					<div className="mb-4">
+						<label
+							className="block text-gray-700 text-sm font-bold mb-2"
 							htmlFor="mobile"
 						>
 							Contact Number

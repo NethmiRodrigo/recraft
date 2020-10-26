@@ -2,6 +2,9 @@ import React from "react";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
+//Articles
+// import Article1 from './components/Article/Article1';
+
 //Constants
 import routes from "./constants/routes";
 
@@ -12,6 +15,7 @@ import "./assets/css/tailwind.css";
 function App() {
 	return (
 		<div>
+			{/* <Article1 /> */}
 			<Router>
 				<Switch>
 					{routes.data.map((entry, i) => {
@@ -66,6 +70,7 @@ function App() {
 					})}
 				</Switch>
 			</Router>
+
 		</div>
 	);
 }

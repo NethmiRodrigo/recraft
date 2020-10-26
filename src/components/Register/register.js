@@ -20,7 +20,7 @@ const Register = (props) => {
 
 	return (
 		<div>
-			<div className="font-bold text-xl mb-2 text-center">Register</div>
+			<div className="font-bold text-xl mb-2 text-center" style={{color: 'white'}}>Register</div>
 			<div className="w-full ">
 				<form className="rounded px-8 pt-6 pb-8 mb-4" onSubmit={submit}>
 					<div className="mb-4">

@@ -40,15 +40,12 @@ function App() {
 													<div className="rpgui-container framed-golden relative max-w-sm h-full mr-3">
 														<img
 															className="h-auto w-full"
-															src={require("./assets/images/background.png")}
+															src={require("./assets/images/new_background.jpeg")}
 															alt="Sunset"
 														/>
 														<div className="px-6 py-4">
 															<p className="text-gray-700 text-base">
-																Lorem ipsum dolor sit amet, consectetur
-																adipisicing elit. Voluptatibus quia, nulla!
-																Maiores et perferendis eaque, exercitationem
-																praesentium nihil.
+															Recraft. A nationwide platform enabling you to Recycle and Reuse together and make Sri Lanka a better place.
 															</p>
 														</div>
 													</div>

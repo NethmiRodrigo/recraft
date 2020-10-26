@@ -6,15 +6,13 @@ exports.createUser = (req,res)=>{
 
         userId: req.body.userId,
         Name: req.body.name,
-        Address: req.body.address,
         cityName: req.body.cityName,
-        districtName: req.body.districtName,
         phone: req.body.phone,
-        isActive: req.body.isActive,
+       
     
     }
 
-    db.collection('user')
+    db.collection('users')
         .add(newUser)
         .then(()=>{
             res.json(newUser);

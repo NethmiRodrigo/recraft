@@ -11,7 +11,7 @@ const Register = (props) => {
 	const submit = (event) => {
 		console.log("submitted");
 		event.preventDefault();
-		register({ email: email, password })
+		register({ email: email, password }, {name:username, cityName:city, phone:phone}, )
 			.then((response) => {
 				console.log(response);
 			})

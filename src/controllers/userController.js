@@ -18,7 +18,24 @@ export function register(user,userDetails) {
 	return axios
 		.post(`${url}register`, user)
 		.then((response) => {
-			return response.data;
+			console.log(response)
+			let userid =  response.data;
+			userDetails['userId'] = userid;
+			return userDetails;
+		
+		})
+		.then(res=>{
+			 axios
+			.post(`${url}users`,res)
+				.then((response)=>{
+					console.log(response);
+					return response;
+				})
+				.catch(err=>{
+					console.log(err)
+					throw err;
+				})
+				
 		})
 		.catch((err) => {
 			throw err;

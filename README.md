@@ -29,16 +29,6 @@ After getting some inspiration from (rare to find) retro themes, we finished the
 **[Update 3 - 24th of October]**
 Desgined the landing page UI components such as the navigation menu, footer, posts for latest post updates. As we agreed before, partitioned the landing page into three sections. Center section serves as a news feed, showing the advertisments posted by users about the reusable and recycable items in their households, and advertisments posted by recylcing agents about collecting dates and times of goods. Tommorow we are planning of doing ?
 
-**[Final Update]**
-Yet to come.
-
-## Conclusion
-yet to come.
-
-
-## Demo Link
- Demo Link: <i>Link to your demo (Optional)</i>
-
 
 ## Link to Code
 <u>Github</u> 

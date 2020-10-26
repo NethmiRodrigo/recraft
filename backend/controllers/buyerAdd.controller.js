@@ -46,10 +46,13 @@ admin
     const newBuyeradd = {
             addId: addId,
             userId: req.body.userId,
-            typeId: req.body.typeId,
+            type: req.body.type,
             categoryName: req.body.categoryName,
-            conditionDetails: req.body.conditionDetails,
+            description: req.body.description,
             imageUrl:imageUrl,
+            price:req.body.price,
+            phone:req.body.phone,
+            location:req.body.phone,
             postDate: new Date().toISOString(),
             isActive: req.body.isActive
     }

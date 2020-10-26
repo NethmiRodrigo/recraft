@@ -47,7 +47,7 @@ exports.createSellerAdd = (req,res)=>{
 
             addId: addId,
             userId: req.body.userId,
-            typeId: req.body.typeId,
+            type: req.body.type,
             categoryName: req.body.categoryName,
             conditionDetails: req.body.conditionDetails,
             imageUrl:imageUrl,

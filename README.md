@@ -27,7 +27,7 @@ Honouring the cultural practices, our first task was to create a WhatsApp group.
 After getting some inspiration from (rare to find) retro themes, we finished the UI of user login and new user registration pages. Then configured them using node js. Also added firebase authentication for user login. We will be finalising the landing page tommorrow.   
 
 **[Update 3 - 24th of October]**
-Desgined the landing page UI components such as the navigation menu, footer, posts for latest post updates. As we agreed before, partitioned the landing page into three sections. Center section serves as a news feed, showing the advertisments posted by users about the reusable and recycable items in their households, and advertisments posted by recylcing agents about collecting dates and times of goods. Tommorow we are planning of doing ?
+Desgined the landing page UI components such as the navigation menu, footer, posts for latest post updates. As we agreed before, partitioned the landing page into three sections. Center section serves as a news feed, showing the advertisments posted by users about the reusable and recycable items in their households, and advertisments posted by recylcing agents about collecting dates and times of goods.
 
 
 ## Link to Code

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 
 const Modal = (props) => {
-	const onSubmit = () =>{
-			console.log("submitted")
-	}
+	const onSubmit = () => {
+		const ad = {
+			userId: "",
+			categoryName: category,
+			type: type,
+			conditionDetails: description,
+		};
+	};
+
 	const useInput = ({ type }) => {
 		const [value, setValue] = useState("");
 		const input = (
@@ -25,6 +31,7 @@ const Modal = (props) => {
 	const [mobile, mobileInput] = useInput({ type: "text" });
 	const [location, locationInput] = useInput({ type: "text" });
 	const [image, setImage] = useState("");
+	const [description, setDescription] = useState("");
 	return (
 		<div>
 			<div className="fixed z-10 inset-0 overflow-y-auto">
@@ -64,6 +71,8 @@ const Modal = (props) => {
 											<textarea
 												id="about"
 												rows="3"
+												value={description}
+												onChange={(e) => setDescription(e.target.value)}
 												className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-black leading-tight focus:outline-none focus:bg-gray-600"
 												placeholder="A small description about the product"
 											></textarea>

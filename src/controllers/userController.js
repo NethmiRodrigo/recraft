@@ -6,6 +6,7 @@ export function login(user) {
 	return axios
 		.post(url, user)
 		.then((response) => {
+			localStorage.setItem("Token", response.data);
 			return response.data;
 		})
 		.catch((err) => {

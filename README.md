@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<center>
+<img src="https://i.imgur.com/LqUtyGh.png">
+</center>
 
-## Available Scripts
+## Team Declaration
 
-In the project directory, you can run:
+#### Team Name - Victorious
 
-### `yarn start`
+|             | Name                         | Student ID Number | Github Handle |
+|-------------|------------------------------|-------------------|---------------|
+| Team Leader | Yasith Samaradiwakara        | 19020742          | @yasithsam    |
+| Member 1    | Nethmi Rodrigo               | 19001462          | @nethmirodrigo|
+| Member 2    | Nisan Abeywickrama           | 19000032          | @lordreigns   |
+| Member 3    | Isuru harischandra           | 19020333          | @isuruvihan   |
+| Member 4    | Akila Maithripala            | 19020333          | @akilamaithri |     
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What we are building
+ 
+Everyday, hundreds of waste materials are piling up in Sri Lankan households. Some burn them (causing major environmental damage) and some leave them as it is. But this issue can be resolved with the collaboration of waste producers and recyclers. Also, there are many individuals who are willing to reuse the items used by others, if it's in reasonable condition. We are building a platform to bring this 3 seperated parties together, enabling a buy and sell method of waste items. Good for the environment and products gets resused; its win, win!  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## How we built it
 
-### `yarn test`
+**[Initial Update - 22nd of October]**
+Honouring the cultural practices, our first task was to create a WhatsApp group. After dividing our work individually, we designed the system architectureadn the database. Used firebase to design the database. We will be finishing the design language conflicts and starting bulding the UI tommorow. All agreed to choose the 80's retro theme as our design language.  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**[Update 2 - 23rd of October]**
+After getting some inspiration from (rare to find) retro themes, we finished the UI of user login and new user registration pages. Then configured them using node js. Also added firebase authentication for user login. We will be finalising the landing page tommorrow.   
 
-### `yarn build`
+**[Update 3 - 24th of October]**
+Desgined the landing page UI components such as the navigation menu, footer, posts for latest post updates. As we agreed before, partitioned the landing page into three sections. Center section serves as a news feed, showing the advertisments posted by users about the reusable and recycable items in their households, and advertisments posted by recylcing agents about collecting dates and times of goods. Tommorow we are planning of doing ?
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**[Final Update]**
+Yet to come.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Conclusion
+yet to come.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Demo Link
+ Demo Link: <i>Link to your demo (Optional)</i>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Link to Code
+<u>Github</u> 
+https://github.com/NethmiRodrigo/recraft<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contributing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project is open source and welcomes contributions. 
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[MIT](http://www.opensource.org/licenses/mit-license.html)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Disclaimer
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+No warranty expressed or implied. Software is as is.

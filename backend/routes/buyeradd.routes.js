@@ -2,7 +2,9 @@ module.exports = (app) => {
 
     const buyeradd = require('../controllers/buyerAdd.controller');
 
-    app.post('/buyeradd',buyeradd.createBuyerAdd);
+    app.post('/buyeradd', buyeradd.upload.single('image'), buyeradd.createBuyerAdd);
+
+    app.get('/buyeradd', buyeradd.getAllbuyerAdd);
 
     app.get('/buyeradd/:addId',buyeradd.getBuyerAdd);
 
@@ -10,5 +12,5 @@ module.exports = (app) => {
 
     app.delete('/buyeradd/:addId', buyeradd.deleteBuyerAdd)  ;
 
-
+    
 }

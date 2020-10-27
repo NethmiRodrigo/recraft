@@ -41,6 +41,7 @@ exports.createSellerAdd = (req, res) => {
 	const newSellerAdd = {
 		addId: addId,
 		userId: req.body.userId,
+		name: req.body.name,
 		type: req.body.type,
 		categoryName: req.body.categoryName,
 		conditionDetails: req.body.conditionDetails,

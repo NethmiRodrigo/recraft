@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const url = "http://localhost:3060/buyeradd";
-const id = localStorage.getItem("Token");
 
 export function getAllBuyers() {
 	return axios
@@ -36,7 +35,7 @@ export function addBuyer(buyer) {
 		});
 }
 
-export function deleteBuyer() {
+export function deleteBuyer(id) {
 	return axios
 		.delete(`${url}/${id}`)
 		.then((res) => {

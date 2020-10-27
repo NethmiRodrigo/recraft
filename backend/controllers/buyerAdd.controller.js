@@ -47,7 +47,7 @@ exports.createBuyerAdd = (req, res) => {
 		imageUrl: imageUrl,
 		price: req.body.price,
 		phone: req.body.phone,
-		location: req.body.phone,
+		location: req.body.location,
 		postDate: new Date().toISOString(),
 		isActive: req.body.isActive,
 	};

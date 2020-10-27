@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { addSeller } from "../../../controllers/sellerAddController";
+import { getUserDetails } from "../../../controllers/userController";
 import Error from "../alerts/error";
 import Success from "../alerts/success";
 
@@ -27,6 +28,7 @@ const Modal = (props) => {
 
 	const submit = (event) => {
 		event.preventDefault();
+		let name;
 		const ad = {
 			userId: token,
 			type: type,
@@ -38,7 +40,15 @@ const Modal = (props) => {
 			date: date,
 			isActive: true,
 		};
-		addSeller(ad)
+		getUserDetails(token)
+			.then((response) => {
+				name = response.Name;
+				return name;
+			})
+			.then((name) => {
+				ad.name = name;
+				return addSeller(ad);
+			})
 			.then((response) => {
 				console.log(response);
 				setSuccess(true);

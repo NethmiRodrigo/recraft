@@ -15,7 +15,7 @@ exports.createUser = (req,res)=>{
     db.collection('users')
         .add(newUser)
         .then(()=>{
-            res.json(newUser);
+            res.sendStatus(200);
         })
 }
 

@@ -1,29 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { login } from "../../controllers/userController";
+import Error from "../common/alerts/error";
+import Success from "../common/alerts/success";
 
 const Login = (props) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [success, setSuccess] = useState(false);
+	const [error, seterror] = useState(false);
+	const [redirect, setredirect] = useState(false);
+
+	useEffect(() => {
+		if (success) {
+			setTimeout(() => {
+				setredirect(true);
+			}, 2000);
+		}
+	}, [success]);
 
 	const submit = (event) => {
+		setSuccess(false);
+		seterror(false);
 		event.preventDefault();
 		login({ email: username, password })
 			.then((response) => {
 				setSuccess(true);
 				console.log(response);
-				return <Redirect to="/" />;
 			})
 			.catch((err) => {
+				seterror(true);
 				console.log(err);
-				return <Redirect to="/" />;
 			});
 	};
 
 	return (
 		<div>
-			{success ? <Redirect to="?" /> : <> </>}
+			{redirect ? <Redirect to="/" /> : <> </>}
 			<div className="font-bold text-xl mb-2 text-center text-white">Login</div>
 			<div className="w-full ">
 				<form className="rounded px-8 pt-6 pb-8 mb-4" onSubmit={submit}>
@@ -61,6 +74,13 @@ const Login = (props) => {
 							placeholder="******************"
 						/>
 					</div>
+					{error ? (
+						<Error />
+					) : success ? (
+						<Success message="You will be redirected shortly" />
+					) : (
+						<> </>
+					)}
 					<div className="flex items-center justify-between">
 						<button
 							className="rpgui-button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

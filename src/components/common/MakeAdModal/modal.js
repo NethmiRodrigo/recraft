@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { addBuyer } from "../../../controllers/buyerAddController";
+import Error from "../alerts/error";
+import Success from "../alerts/success";
 
 const Modal = (props) => {
 	const token = localStorage.getItem("Token");
 	const submit = (event) => {
 		event.preventDefault();
+		setSuccess(false);
+		seterror(false);
 		const ad = {
 			userId: localStorage.getItem("Token"),
 			categoryName: category,
@@ -17,10 +21,16 @@ const Modal = (props) => {
 			price: price,
 			isActive: true,
 		};
-		console.log(token);
+		console.log(ad);
 		addBuyer(ad)
-			.then((response) => console.log(response))
-			.catch((err) => console.log(err));
+			.then((response) => {
+				console.log(response);
+				setSuccess(true);
+			})
+			.catch((err) => {
+				console.log(err);
+				seterror(true);
+			});
 	};
 
 	const useInput = ({ type }) => {
@@ -29,7 +39,10 @@ const Modal = (props) => {
 			<div className="md:w-2/3">
 				<input
 					value={value}
-					onChange={(e) => setValue(e.target.value)}
+					onChange={(e) => {
+						setValue(e.target.value);
+						setSuccess(false);
+					}}
 					className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
 					type={type}
 				/>
@@ -37,6 +50,8 @@ const Modal = (props) => {
 		);
 		return [value, input];
 	};
+	const [success, setSuccess] = useState(false);
+	const [error, seterror] = useState(false);
 	const [category, setCategory] = useState("recycle");
 	const [type, setType] = useState("");
 	const [product, productInput] = useInput({ type: "text" });
@@ -197,6 +212,13 @@ const Modal = (props) => {
 											</div>
 											{locationInput}
 										</div>
+										{success ? (
+											<Success message="Your ad has been posted" />
+										) : error ? (
+											<Error />
+										) : (
+											<> </>
+										)}
 										<div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
 											<span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
 												<button
@@ -213,6 +235,7 @@ const Modal = (props) => {
 												<button
 													type="button"
 													type="submit"
+													disabled={success ? true : false}
 													className="inline-flex justify-center w-full rounded-md px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none transition ease-in-out duration-150 sm:text-sm sm:leading-5"
 												>
 													Post

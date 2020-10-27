@@ -1,28 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import { register } from "../../controllers/userController";
+import Error from "../common/alerts/error";
+import Success from "../common/alerts/success";
 
 const Register = (props) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	const [city, setCity] = useState("")
-	const [phone, setPhone] = useState("")
+	const [city, setCity] = useState("");
+	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
+	const [success, setSuccess] = useState(false);
+	const [error, seterror] = useState(false);
+	const [redirect, setredirect] = useState(false);
+
+	useEffect(() => {
+		if (success) {
+			setTimeout(() => {
+				setredirect(true);
+			}, 2000);
+		}
+	}, [success]);
 
 	const submit = (event) => {
 		console.log("submitted");
+		setSuccess(false);
+		seterror(false);
 		event.preventDefault();
-		register({ email: email, password }, {name:username, cityName:city, phone:phone}, )
+		register(
+			{ email: email, password },
+			{ name: username, cityName: city, phone: phone }
+		)
 			.then((response) => {
+				setSuccess(true);
 				console.log(response);
 			})
 			.catch((err) => {
+				seterror(true);
 				console.log(err);
 			});
 	};
 
 	return (
 		<div>
-			<div className="font-bold text-xl mb-2 text-center" style={{color: 'white'}}>Register</div>
+			{redirect ? <Redirect to="/login" /> : <> </>}
+			<div
+				className="font-bold text-xl mb-2 text-center"
+				style={{ color: "white" }}
+			>
+				Register
+			</div>
 			<div className="w-full ">
 				<form className="rounded px-8 pt-6 pb-8 mb-4" onSubmit={submit}>
 					<div className="mb-4">
@@ -72,7 +99,7 @@ const Register = (props) => {
 							type="text"
 							required
 							value={city}
-							onChange = {(e) => setCity(e.target.value)}
+							onChange={(e) => setCity(e.target.value)}
 							placeholder="Your city"
 						/>
 					</div>
@@ -122,10 +149,16 @@ const Register = (props) => {
 							id="password"
 							type="password"
 							required
-					
 							placeholder="******************"
 						/>
 					</div>
+					{error ? (
+						<Error />
+					) : success ? (
+						<Success message="You will be redirected shortly" />
+					) : (
+						<> </>
+					)}
 					<div className="flex items-center justify-between">
 						<button
 							className="rpgui-button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

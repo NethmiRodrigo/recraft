@@ -42,8 +42,8 @@ app.post("/register", (req, res) => {
 		.auth()
 		.createUserWithEmailAndPassword(newUser.email, newUser.password)
 		.then((data) => {
-			userId = data.user.uid;
-			return data.user.getIdToken();
+	
+			return res.status(200).json({data:data.user.uid});
 		})
 		.catch((err) => {
 			console.log(err);

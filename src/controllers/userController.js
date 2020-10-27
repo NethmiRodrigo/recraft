@@ -19,25 +19,23 @@ export function register(user,userDetails) {
 	return axios
 		.post(`${url}register`, user)
 		.then((response) => {
-			console.log(response)
-			let userid =  response.data;
+	
+			let userid =  response.data.data;
 			userDetails['userId'] = userid;
-			return userDetails;
+			console.log(userDetails);
+			return axios.post(`${url}users`, userDetails)
+			.then((response)=>{
+				console.log(response);
+				return response;
+			})
+			.catch(err=>{
+				console.log(err)
+				throw err;
+			})
+			
+	
+		})
 		
-		})
-		.then(res=>{
-			 axios
-			.post(`${url}users`,res)
-				.then((response)=>{
-					console.log(response);
-					return response;
-				})
-				.catch(err=>{
-					console.log(err)
-					throw err;
-				})
-				
-		})
 		.catch((err) => {
 			throw err;
 		});

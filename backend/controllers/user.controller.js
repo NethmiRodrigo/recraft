@@ -46,3 +46,28 @@ exports.deleteUser = (req, res) => {
 		return res.status(200).send(doc.data());
 	});
 };
+
+exports.buyerAddsByUser = (req, res) => {
+	let ads = [];
+	db.collection("buyerAdd")
+		.where("userId", "==", req.params.userId)
+		.get()
+		.then((data) => {
+			data.forEach((doc) => {
+				console.log(doc);
+				ads.push({
+					categoryName: doc.data().categoryName,
+					description: doc.data().description,
+					location: doc.data().location,
+					phone: doc.data().phone,
+					price: doc.data().price,
+					type: doc.data().type,
+				});
+			});
+			return res.json(ads);
+		})
+		.catch((err) => {
+			console.log(err);
+			return res.status(500).json({ error: err.code });
+		});
+};

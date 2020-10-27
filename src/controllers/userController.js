@@ -49,3 +49,14 @@ export function getUserDetails(id) {
 			throw err;
 		});
 }
+
+export function getAds(id) {
+	return axios
+		.get(`${url}users/ads/${id}`)
+		.then((response) => {
+			return response.data;
+		})
+		.catch((err) => {
+			throw err;
+		});
+}

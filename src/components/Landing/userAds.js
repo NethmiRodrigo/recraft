@@ -1,40 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getAds } from "../../controllers/userController";
 
 const UserAds = (props) => {
 	const token = localStorage.getItem("Token");
+	const [ads, setAds] = useState([]);
+	useEffect(() => {
+		getAds(token)
+			.then((res) => {
+				console.log(res);
+				setAds(res);
+			})
+			.catch((err) => console.log(err));
+	}, []);
 	return (
 		<div>
 			<h3>{props.heading}</h3>
 			<div className="container mb-10 mx-auto">
-				<div>
-					<div className="flex bg-gray-500 w-full rounded-lg p-6">
+				{ads.map((ad, i) => (
+					<div className="flex bg-gray-500 w-full rounded-lg mb-2 mr-2">
 						<img
 							className="h-24 w-24 rounded-full mx-auto"
 							src={require("../../assets/images/card-top.jpg")}
 							alt="Sunset in the mountains"
 						></img>
 						<div className="font-bold text-black mt-2 text-left">
-							<div className="text-center text-black">Reusable </div>
-							<p className="m-5 ">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							</p>
+							<div className="text-center text-black">
+								{ad.categoryName.toUpperCase()}
+							</div>
+							<p className="ml-5 mt-5"> {ad.description}</p>
+							<div className="px-6 pt-4 pb-2">
+								<span className="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+									Contact: {ad.phone}
+								</span>
+								<span className="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+									Location: {ad.location}
+								</span>
+								<span className="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+									Price: {ad.price}
+								</span>
+								<span className="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+									Type: {ad.type}
+								</span>
+							</div>
 						</div>
-						{props.button ? (
-							<button className="border-2 border-red-700 rounded p-2 bg-red-700 h-full">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-								>
-									<path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z" />
-								</svg>
-							</button>
-						) : (
-							<> </>
-						)}
 					</div>
-				</div>
+				))}
 			</div>
 		</div>
 	);

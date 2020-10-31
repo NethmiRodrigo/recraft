@@ -71,7 +71,7 @@ const ViewAllAds = () => {
 					<h3> All ads </h3>
 					<div className="container mb-10 mx-auto">
 						{ads.map((ad, i) => (
-							<div className="flex bg-gray-500 w-full rounded-lg p-6">
+							<div className="flex bg-gray-500 w-full rounded-lg p-6 mb-2">
 								<img
 									className="h-24 w-24 rounded-full mx-auto"
 									src={require("../../assets/images/card-top.jpg")}
